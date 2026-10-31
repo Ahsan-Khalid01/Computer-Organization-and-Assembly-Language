@@ -1,0 +1,31 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+NUM DB 00000110B
+RESULT DB ?
+
+.CODE
+MOV AX, @DATA
+MOV DS, AX
+
+MOV AL, NUM
+OR AL, 00000001B
+XOR AL, 00000010B
+SHL AL, 1
+
+MOV RESULT, AL
+
+MOV AH, 4CH
+INT 21H
+
+END
+;;A register is a small and fast storage location inside the CPU used to temporarily store data and results.
+;
+ ; DB stands for Define Byte. It reserves 1 byte 8 bits of memory for a variable.
+
+
+
+
+
+; [SOURCE]: C:\Users\dcui\Desktop\question 2.asm
